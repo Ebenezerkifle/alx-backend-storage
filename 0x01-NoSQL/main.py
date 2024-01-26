@@ -11,10 +11,10 @@ if __name__ == "__main__":
     print('--------------------------')
     print(client.list_database_names())
     school_collection = client.bookstore.books
-    # schools = list_all(school_collection)
-    # print(len(schools))
-    # for school in schools:
-    #     print("[{}] {}".format(school.get('_id'), school.get('name')))
+    schools = list_all(school_collection)
+    print(len(schools))
+    for school in schools:
+        print("[{}] {}".format(school.get('_id'), school.get('name')))
     
     # new_school_id = insert_school(school_collection, name="Holberton school", address="505 Parnassus Ave")
     # print("New school created: {}".format(new_school_id))
@@ -34,16 +34,16 @@ if __name__ == "__main__":
     # schools = list_all(school_collection)
     # for school in schools:
     #     print("[{}] {} {}".format(school.get('_id'), school.get('name'), school.get('topics', "")))
-    j_schools = [
-        { 'name': "Holberton school", 'topics': ["Algo", "C", "Python", "React"]},
-        { 'name': "UCSF", 'topics': ["Algo", "MongoDB"]},
-        { 'name': "UCLA", 'topics': ["C", "Python"]},
-        { 'name': "UCSD", 'topics': ["Cassandra"]},
-        { 'name': "Stanford", 'topics': ["C", "React", "Javascript"]}
-    ]
-    for j_school in j_schools:
-        insert_school(school_collection, **j_school)
+    # j_schools = [
+    #     { 'name': "Holberton school", 'topics': ["Algo", "C", "Python", "React"]},
+    #     { 'name': "UCSF", 'topics': ["Algo", "MongoDB"]},
+    #     { 'name': "UCLA", 'topics': ["C", "Python"]},
+    #     { 'name': "UCSD", 'topics': ["Cassandra"]},
+    #     { 'name': "Stanford", 'topics': ["C", "React", "Javascript"]}
+    # ]
+    # for j_school in j_schools:
+    #     insert_school(school_collection, **j_school)
 
-    schools = schools_by_topic(school_collection, "Python")
-    for school in schools:
-        print("[{}] {} {}".format(school.get('_id'), school.get('name'), school.get('topics', "")))
+    # schools = schools_by_topic(school_collection, "Python")
+    # for school in schools:
+    #     print("[{}] {} {}".format(school.get('_id'), school.get('name'), school.get('topics', "")))
